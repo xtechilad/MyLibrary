@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+header {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-family: 'Abyssinica SIL', serif;
+}
