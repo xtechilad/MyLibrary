@@ -30,30 +30,30 @@ export default function AddBook(props) {
 
     return (
         <div>
-            <form className='w-[23rem] h-64 bg-white rounded mx-auto'>
+            <form className='sm:w-[23rem] w-60 sm:h-64 bg-white rounded mx-auto'>
                 <input 
                     name="title"
-                    className='w-[22rem] h-12 border-2 m-2 p-2 rounded outline-none' 
+                    className='sm:w-[22rem] w-56 h-12 border-2 m-2 p-2 rounded outline-none' 
                     placeholder='Book Title' 
                     value={book.title}
                     onChange={handleChange} 
                 />
                 <input 
                     name="author"
-                    className='w-[22rem] h-12 border-2 m-2 p-2 rounded outline-none' 
+                    className='sm:w-[22rem] w-56 h-12 border-2 m-2 p-2 rounded outline-none' 
                     placeholder='Author' 
                     value={book.author}
                     onChange={handleChange} 
                 />
                 <input 
                     name="imgURL"
-                    className='w-[22rem] h-12 border-2 m-2 p-2 rounded outline-none' 
+                    className='sm:w-[22rem] w-56 h-12 border-2 m-2 p-2 rounded outline-none' 
                     placeholder='Image URL' 
                     value={book.imgURL}
                     onChange={handleChange} 
                 />
                 <button 
-                    className='w-[22rem] h-12 m-2 rounded border-2 text-blue-500 border-blue-500 hover:bg-blue-500 hover:text-white font-semibold'
+                    className='sm:w-[22rem] w-56 h-12 m-2 rounded border-2 text-blue-500 border-blue-500 hover:bg-blue-500 hover:text-white font-semibold'
                     onClick={submitBook}
                 >
                     Add Book

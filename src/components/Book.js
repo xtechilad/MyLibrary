@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Book(props) {
     return (
-        <div className='w-[12.5rem] m-4 float-left'>
+        <div className='w-[12.5rem] sm:m-4 sm:float-left m-auto'>
             <div className='bg-black relative'>
                 <img src={props.imgURL} className='hover:opacity-20' alt={props.nameofBook} />
             </div>

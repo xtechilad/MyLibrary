@@ -49,7 +49,7 @@ export default function App() {
 
             <SearchBar />
 
-            <div className='2xl:mx-40 mt-12'>
+            <div className='2xl:mx-24 xl:px-16 px-2 mt-12'>
                 {books.map((aBook, index) => {
                     return (
                         <Book 
