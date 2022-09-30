@@ -11,7 +11,7 @@ export default function SearchBar(props) {
                 value={props.inputTextValue}
             />
             <div className='absolute top-12 right-[1.5rem] xl:right-20 2xl:right-44 border-l-gray-400 border-l-2'>
-                <button onClick={props.handleClick} className='h-12 w-12'>
+                <button className='h-12 w-12'>
                     <FontAwesomeIcon icon={faMagnifyingGlass} className='text-black' />
                 </button>
             </div>
