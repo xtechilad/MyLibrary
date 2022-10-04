@@ -6,6 +6,7 @@ import AddBook from './AddBook';
 
 export default function App() {
     const [books, setBooks] = useState([]);
+    const [inputText, setInputText] = useState(null);
     const [formCSS, setFormCSS] = useState({
         display: 'none'
     });
@@ -19,7 +20,7 @@ export default function App() {
                 display: 'none'
             });
         } else {
-            alert("Book could not be added!");
+            alert("Enter enough details to add a book!");
         }
     }
 
@@ -35,6 +36,18 @@ export default function App() {
         }
     }
 
+    function deleteBook(id) {
+        setBooks(prevBooks => {
+            return prevBooks.filter((bookItem, index) => {
+                return index !== id;
+            });
+        });
+    }
+
+    function setSearchTerm(event) {
+        setInputText(event.target.value);
+    }
+
     return (
         <div>
             <Header 
@@ -47,7 +60,10 @@ export default function App() {
                 />
             </div>
 
-            <SearchBar />
+            <SearchBar 
+                handleChange={setSearchTerm}
+                inputvalue={inputText}
+            />
 
             <div className='2xl:mx-24 xl:px-16 px-2 mt-12'>
                 {books.map((aBook, index) => {
@@ -58,6 +74,7 @@ export default function App() {
                             nameOfBook={aBook.title}
                             authorOfBook={"~ " + aBook.author}
                             imgURL={aBook.imgURL}
+                            onDelete={deleteBook}
                         />
                     );
                 })}
@@ -65,16 +82,3 @@ export default function App() {
         </div>
     );
 }
-
-
-
-
-    // function getChange(event) {
-    //     for (let i = 0; i < Books.length; i++) {
-    //         for(let j=0; j < Books[i].name[j].length; j++) {
-    //             if(event.target.value === Books[i].name[j]) {
-    //                 console.log(Books[i].name);
-    //             }
-    //         }
-    //     }
-    // }
