@@ -10,6 +10,20 @@ export default function App() {
     const [formCSS, setFormCSS] = useState({
         display: 'none'
     });
+    const [degree, setDegree] = useState(0);
+
+    var rotation = {
+        transform: "rotate(" + degree + "deg)",
+        transition: "transform 0.4s ease"
+    }
+
+    function rotateButton() {
+        if(degree === 0) {
+            setDegree(45);
+        } else {
+            setDegree(0);
+        }
+    }
 
     function addBook(newBook) {
         if(newBook.title !== "" && newBook.author !== "" && newBook.imgURL !== "") {
@@ -19,6 +33,7 @@ export default function App() {
             setFormCSS({
                 display: 'none'
             });
+            setDegree(0);
         } else {
             alert("Enter enough details to add a book!");
         }
@@ -52,6 +67,8 @@ export default function App() {
         <div>
             <Header 
                 showForm={formAppear}
+                rotate={rotateButton}
+                animation={rotation}
             />
 
             <div id='addbook' className='mt-8' style={formCSS}>
