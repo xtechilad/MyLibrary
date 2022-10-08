@@ -6,7 +6,7 @@ import { faCirclePlus} from '@fortawesome/free-solid-svg-icons';
 export default function Header(props) {
     return (
         <header className='py-5 px-2 2xl:px-44 xl:px-20 text-white bg-[#534340] flex'>
-            <a href="https://github.com/xtechilad/my-library" target="#">
+            <a href="https://github.com/xtechilad/mylibrary" target="#">
                 <h1 className='font-extralight text-[1.7rem] ml-4 xl:ml-0 overflow-hidden'>MyLibrary</h1>
             </a>
 
