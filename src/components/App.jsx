@@ -6,10 +6,13 @@ import AddBook from './AddBook';
 
 export default function App() {
     const [books, setBooks] = useState([]);
+
     const [inputText, setInputText] = useState(null);
+
     const [formCSS, setFormCSS] = useState({
         display: 'none'
     });
+    
     const [degree, setDegree] = useState(0);
 
     var rotation = {
@@ -83,18 +86,23 @@ export default function App() {
             />
 
             <div className='2xl:mx-24 xl:px-16 px-2 mt-12'>
-                {books.map((aBook, index) => {
-                    return (
-                        <Book 
-                            key={index}
-                            id={index}
-                            nameOfBook={aBook.title}
-                            authorOfBook={"~ " + aBook.author}
-                            imgURL={aBook.imgURL}
-                            onDelete={deleteBook}
-                        />
-                    );
-                })}
+                {books.length !== 0 ? 
+                    books.map((aBook, index) => {
+                        return (
+                            <Book 
+                                key={index}
+                                id={index}
+                                nameOfBook={aBook.title}
+                                authorOfBook={"~ " + aBook.author}
+                                imgURL={aBook.imgURL}
+                                onDelete={deleteBook}
+                            />
+                        );
+                    }) : 
+                    <div className='text-center'>
+                        <h3 className='font-bold text-2xl text-white'>There's Nothing here !</h3>
+                    </div>
+                }
             </div>
         </div>
     );

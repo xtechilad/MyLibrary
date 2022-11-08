@@ -9,7 +9,7 @@ export default function SearchBar(props) {
                 onChange={props.handleChange} 
                 className='rounded-[4px] w-full h-12 p-4 z-0 outline-none' 
                 placeholder='Search the Library' 
-                value={props.inputValue}
+                value={props.inputValue} 
             />
             <div className='absolute top-12 right-[1.5rem] xl:right-20 2xl:right-44 border-l-gray-400 border-l-2'>
                 <button className='h-12 w-12' >

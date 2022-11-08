@@ -44,5 +44,5 @@ export default function Book(props) {
                 </h2>
             </div>
         </div>
-    )
+    );
 }
