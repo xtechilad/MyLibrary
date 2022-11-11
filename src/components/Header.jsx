@@ -1,18 +1,27 @@
+// Import dependencies
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus} from '@fortawesome/free-solid-svg-icons';
+import { faCircleMinus, faCirclePlus} from '@fortawesome/free-solid-svg-icons';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signInWithPopup, signOut } from 'firebase/auth';
+
+// Import from other files
 import { auth, provider } from '../config/firebase';
 
 export default function Header(props) {
+    // Function to access current user state
     const [user] = useAuthState(auth);
 
+
+
+    // Function to SignIn
     const signIn = async () => {
-        const result = await signInWithPopup(auth, provider);
-        console.log(result);
+        signInWithPopup(auth, provider);
     };
 
+
+
+    // Function to SignOut
     const signUserOut = async () => {
         await signOut(auth);
     };
@@ -27,7 +36,10 @@ export default function Header(props) {
                 <>
                     <button id='HeaderButton' className='ml-auto mr-8 text-white font-bold rounded hidden sm:block' onClick={signUserOut}>Logout</button>
                     <button id='HeaderButton' className='mr-4 py-2 px-4 bg-white hover:bg-gray-100 text-black font-bold rounded hidden sm:block' onClick={props.showForm}>Add a Book</button>
-                    <button className='ml-auto mr-4 text-black font-bold rounded-full visible sm:hidden' onClick={() => {props.showForm(); props.rotate()}}>
+                    <button className='ml-auto mr-4 text-black font-bold rounded-full visible sm:hidden' onClick={signUserOut}>
+                        <FontAwesomeIcon icon={faCircleMinus} className='text-white hover:text-gray-100 bg-black rounded-full h-10 w-auto' />
+                    </button>
+                    <button className='mr-4 text-black font-bold rounded-full visible sm:hidden' onClick={() => {props.showForm(); props.rotate()}}>
                         <FontAwesomeIcon style={props.animation} icon={faCirclePlus} className='text-white hover:text-gray-100 bg-black rounded-full h-10 w-auto' />
                     </button>
                     <img src={user?.photoURL} className='mr-4 xl:mr-0 text-black font-bold h-[40px] rounded-full' alt='profile page' />

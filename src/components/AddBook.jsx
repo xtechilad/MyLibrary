@@ -1,12 +1,17 @@
+// Import dependencies
 import React, { useState } from 'react';
 
 export default function AddBook(props) {
+    // UseState Hook
     const [book, setBook] = useState({
         title: "",
         author: "",
         imgURL: ""
     });
 
+
+
+    // Funtion to store input values of form
     function handleChange(event) {
         const {name, value} = event.target;
 
@@ -18,6 +23,9 @@ export default function AddBook(props) {
         });
     }
 
+
+
+    // Function to add book to 'books' collection on firebase
     function submitBook(event) {
         props.onAdd(book);
         setBook({

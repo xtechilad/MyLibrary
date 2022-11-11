@@ -1,8 +1,10 @@
+// Import dependencies
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function Book(props) {
+    // UseState Hooks
     const [deleteIconCSS, setDeleteIconCSS] = useState({
         display: 'none'
     });
@@ -11,6 +13,9 @@ export default function Book(props) {
         opacity: '100%'
     });
 
+
+
+    // Function to handle delete button visibility
     const showDeleteButton = () => {
         if(deleteIconCSS.display === 'none') {
             setDeleteIconCSS({
