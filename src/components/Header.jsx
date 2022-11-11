@@ -16,8 +16,7 @@ export default function Header(props) {
 
     // Function to SignIn
     const signIn = async () => {
-        const result = signInWithPopup(auth, provider);
-        console.log(result);
+        signInWithPopup(auth, provider);
     };
 
 
